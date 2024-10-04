@@ -1,31 +1,34 @@
-# Задача "Всё не так уж просто"
-numbers = []
-primes = []
-not_primes = []
+# Задача "Всё не так уж просто" Расширенный вариант
+numbers = [] # пустой список для заполнения
+primes = [] # пусттой список простых чисел
+not_primes = [] # пустой список составных чисел
 if int(input('Для введения своего списка нажмите 1, для решения задания нажмите 0: ')) == 0:
+# Выбор выполнять задание -0 или ввести свой список -1
     numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 else:
     while True:
+    # ввод списка с клавиатуры, завершение ввода -0
         numbers_in = int(input('Введите значение, для завершения введите 0: '))
         if numbers_in != 0:
             numbers.append(numbers_in)
         else:
             break
-print('Список значений для проверки: ', numbers)
-numbers = set(sorted(numbers))
-numbers = list(numbers)
-if numbers[0] == 1:
-    primes.append(numbers[0])
-    numbers.pop(0)
-for i in range(len(numbers)):
-    is_prime = True
-    for j in range(2, numbers[i]):
-        if numbers[i] % j == 0:
-            is_prime = False
-            break
-    if is_prime:
-        primes.append(numbers[i])
+print('Список значений для проверки: ', numbers) # вывод проверяемого списка
+numbers = set(sorted(numbers)) # перевод во множество для удаления повторений и сортировки
+numbers = list(numbers) # созвращаем отсортированный список
+if numbers[0] == 1: # если в списке есть 1
+    primes.append(numbers[0]) # добавляем в список простых чисел, как исключение
+    numbers.pop(0) # удаляем исключение из списка
+for i in range(len(numbers)): # перебор елементов списка
+    is_prime = True # признак простоты числа, True - простое, False - составное, True по умолчанию
+    for j in range(2, numbers[i]): # перебор делителей начиная с 2 до значения элемента списка
+        if numbers[i] % j == 0: # если делится нацело
+            is_prime = False # меняем признак простого числа
+            break # досрочно заканчиваем перебор
+    if is_prime: # проверка признака простого числа
+        primes.append(numbers[i]) # заполняем список простыми числами
     else:
-        not_primes.append(numbers[i])
+        not_primes.append(numbers[i]) # заполняем список составными числами
+# вывод результата работы программы
 print('Список простых чисел: ', primes)
 print('Список составных чисел: ', not_primes)
