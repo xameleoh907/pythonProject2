@@ -6,10 +6,10 @@ def get_matrix (n, m, value): # функция создания матрицы g
         for j in range(m): # второй цикл по количеству столбцов
             row.append(value) # добавляем в список row значение value по количеству столбцов
         matrix.append(row) # добавляем в матрицу matrix строку
-    print('Результат работы функции: ')
-    print(matrix) # выводим результат
+    return matrix # возвращаем матрицу
 # ввод данных от пользователя
 line = int(input('Введите количество строк матрицы: '))
 column = int(input('Введите количество столбцов матрицы: '))
 element = int(input('Введите элемент матрицы: '))
-get_matrix(line, column, element) # вызов функции создания матрицы
+result = get_matrix(line, column, element)
+print('Результат работы функции: ')
