@@ -14,7 +14,7 @@ def string_info(string_f): # функция сбора сведений стро
 def is_contains(string, list_): # функция поиска строки в списке
     count_calls() # вызов счетчика функций
     for i in list_: # перебор строки
-        if i.upper() ==  string.upper(): # поик совпадений
+        if string.upper() in i.upper(): # поик совпадений
             is_contains_f = True
         else:
             is_contains_f = False
