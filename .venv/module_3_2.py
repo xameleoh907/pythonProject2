@@ -8,7 +8,7 @@ def check_mail (mail): # функция проверки корректност�
     else:
         return True
 
-def send_email (message, recipient, sender = "university.help@gmail.com"):
+def send_email (message, recipient, *,sender = "university.help@gmail.com"):
     if check_mail(recipient) or check_mail(sender):
         print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
     elif recipient in sender:
