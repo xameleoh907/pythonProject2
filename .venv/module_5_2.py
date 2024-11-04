@@ -20,8 +20,13 @@ class House:
     def __str__(self):
         return str(f'Название: {self.name}, кол-во этажей: {self.number_of_floor}')
 
+    def set_new_number_of_floors(self, floors):
+        self.number_of_floor = floors
+        return self.number_of_floor
+
 h1 = House('ЖК Эльбрус', 10)
 h2 = House('ЖК Акация', 20)
+h1.set_new_number_of_floors(11)
 
 # __str__
 print(h1)
