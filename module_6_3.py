@@ -42,12 +42,7 @@ class AquaticAnimal(Animal):
     _DEGREE_OF_DANGER = 3
 
     def dive_in(self, dz):
-        x = self._cords[0]
-        y = self._cords[1]
-        z = int(self._cords[2] - abs(dz) / 2 * self.speed)
-        # self.move(x, y, z)
         self._cords[2] = int(self._cords[2] - abs(dz) / 2 * self.speed)
-        print(x, y, z)
 
 
 class PoisonousAnimal(Animal):
