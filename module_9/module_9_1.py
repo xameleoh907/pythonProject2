@@ -12,6 +12,6 @@ def apply_all_func(int_list, *functions):
 try:
     print(apply_all_func([6, 20, 15, 9], max, min))
     print(apply_all_func([6, 20, 15, 9], len, sum, sorted))
-    print(apply_all_func([б, 20, 15, 9], max, min))
-except NameError as exc:
+    print(apply_all_func(['б', 20, 15, 9], max, min))
+except (TypeError, NameError) as exc:
     print(f'Введены недопустимые данные: {exc}')
