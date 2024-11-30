@@ -14,3 +14,6 @@ print(2 * 2 + 2 == 2 * (2 + 2))
 
 print('4th program')
 print(int(float('123.456')*10) % 10)
+
+print('old 3th program')
+print((1234 // 10 % 100) + (5678 // 10 % 100))
